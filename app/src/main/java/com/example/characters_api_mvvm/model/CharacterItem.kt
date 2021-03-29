@@ -1,4 +1,4 @@
-package com.example.characters_api_mvvm
+package com.example.characters_api_mvvm.model
 
 
 import com.google.gson.annotations.SerializedName
@@ -13,9 +13,9 @@ data class CharacterItem(
     @SerializedName("category")
     val category: String,
     @SerializedName("char_id")
-    val charId: Int,
+    val id: Int,
     @SerializedName("img")
-    val img: String,
+    val image: String,
     @SerializedName("name")
     val name: String,
     @SerializedName("nickname")

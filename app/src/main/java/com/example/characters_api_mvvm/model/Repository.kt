@@ -1,6 +1,7 @@
-package com.example.characters_api_mvvm
+package com.example.characters_api_mvvm.model
 
-import androidx.lifecycle.MutableLiveData
+import com.example.characters_api_mvvm.API.APIService
+import com.example.characters_api_mvvm.API.RepositoryCallback
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -20,18 +21,19 @@ class Repository {
 
     private val apiService: APIService = retrofit.create(APIService::class.java)
 
-    val characters = MutableLiveData<Characters>()
-
     fun fetchAllCharactersFromAPI(callback: RepositoryCallback<Characters>) {
         apiService.getAllCharacters().enqueue(object : Callback<Characters> {
             override fun onFailure(call: Call<Characters>, t: Throwable) {
-                callback.onError("error")
+                callback.onError()
             }
 
             override fun onResponse(call: Call<Characters>, response: Response<Characters>) {
                 if (response.isSuccessful) {
-                    callback.onSuccess(response.body())
-                    characters.value = response.body()
+                    if (response.body().isNullOrEmpty()) {
+                        callback.onError()
+                    } else {
+                        callback.onSuccess(response.body()!!)
+                    }
                 }
             }
         })
