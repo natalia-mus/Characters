@@ -1,6 +1,7 @@
 package com.example.characters_api_mvvm.view
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -11,7 +12,7 @@ import com.example.characters_api_mvvm.adapters.CharactersListAdapter
 import com.example.characters_api_mvvm.model.Characters
 import com.example.characters_api_mvvm.viewmodel.MainActivityViewModel
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), CharactersListAdapter.OnItemClickAction {
 
     private lateinit var viewModel: MainActivityViewModel
     private lateinit var allCharactersAdapter: RecyclerView
@@ -34,10 +35,14 @@ class MainActivity : AppCompatActivity() {
 
     private fun showData(characters: Characters) {
         allCharactersAdapter.layoutManager = GridLayoutManager(this, 2)
-        allCharactersAdapter.adapter = CharactersListAdapter(this, characters)
+        allCharactersAdapter.adapter = CharactersListAdapter(this, characters, this)
     }
 
     private fun errorInfo() {
         Toast.makeText(this, "Error. Data can not be loaded.", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun itemClicked(id: Int) {
+        Log.e("id", id.toString())
     }
 }
