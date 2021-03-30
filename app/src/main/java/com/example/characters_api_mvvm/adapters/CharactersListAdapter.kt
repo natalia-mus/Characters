@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.characters_api_mvvm.R
+import com.example.characters_api_mvvm.model.CharacterItem
 import com.example.characters_api_mvvm.model.Characters
 import com.squareup.picasso.Picasso
 
@@ -37,7 +38,7 @@ class CharactersListAdapter(
         holder.name.text = characters[position].name
 
         holder.item.setOnClickListener() {
-            onItemClickedAction.itemClicked(characters[position].id)
+            onItemClickedAction.itemClicked(characters[position])
         }
     }
 
@@ -46,7 +47,7 @@ class CharactersListAdapter(
     }
 
     interface OnItemClickAction {
-        fun itemClicked(id: Int)
+        fun itemClicked(character: CharacterItem)
     }
 }
 
