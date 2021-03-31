@@ -49,6 +49,7 @@ class MainActivity : AppCompatActivity(), CharactersListAdapter.OnItemClickActio
         intent.putExtra("name", character.name)
         intent.putExtra("nickname", character.nickname)
         intent.putExtra("image", character.image)
+        intent.putExtra("birthday", character.birthday)
         intent.putExtra("status", character.status)
 
         startActivity(intent)

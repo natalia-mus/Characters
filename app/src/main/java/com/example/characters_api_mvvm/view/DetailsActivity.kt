@@ -17,17 +17,22 @@ class DetailsActivity : AppCompatActivity() {
     }
 
     private fun setData() {
-        //val name = findViewById<TextView>(R.id.characterDetails_name)
+        val name = findViewById<TextView>(R.id.characterDetails_name)
         val nickname = findViewById<TextView>(R.id.characterDetails_nickname)
         val image = findViewById<ImageView>(R.id.characterDetails_image)
-        //val birthday = findViewById<TextView>(R.id.characterDetails_birthday)
+        val birthday = findViewById<TextView>(R.id.characterDetails_birthday)
+        val status = findViewById<TextView>(R.id.characterDetails_status)
 
         val characterName = intent.getStringExtra("name")
         val characterNickname = intent.getStringExtra("nickname")
         val characterImage = intent.getStringExtra("image")
         val characterBirthday = intent.getStringExtra("birthday")
+        val characterStatus = intent.getStringExtra("status")
 
+        name.text = characterName
         nickname.text = characterNickname
+        birthday.text = characterBirthday
+        status.text = characterStatus
 
         Picasso.with(this).load(characterImage).fit().centerCrop().into(image)
     }
