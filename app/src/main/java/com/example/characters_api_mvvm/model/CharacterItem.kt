@@ -1,11 +1,14 @@
 package com.example.characters_api_mvvm.model
 
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class CharacterItem(
-    @SerializedName("appearance")
-    val appearance: List<Any>,
+    /*@SerializedName("appearance")
+    val appearance: List<Any>,*/
     @SerializedName("better_call_saul_appearance")
     val betterCallSaulAppearance: List<Int>,
     @SerializedName("birthday")
@@ -26,4 +29,4 @@ data class CharacterItem(
     val portrayed: String,
     @SerializedName("status")
     val status: String
-)
+) : Parcelable
