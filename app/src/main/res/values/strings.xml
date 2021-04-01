@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Characters_API_MVVM</string>
+    <string name="app_name">Characters</string>
     <string name="characterDetails_birthday">birthday: </string>
     <string name="characterDetails_status">status: </string>
     <string name="characterDetails_occupation">occupation: </string>
