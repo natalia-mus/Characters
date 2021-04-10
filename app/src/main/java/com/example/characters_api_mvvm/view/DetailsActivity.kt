@@ -5,6 +5,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.characters_api_mvvm.R
+import com.example.characters_api_mvvm.model.CharacterItem
 import com.squareup.picasso.Picasso
 
 class DetailsActivity : AppCompatActivity() {
@@ -23,11 +24,13 @@ class DetailsActivity : AppCompatActivity() {
         val birthday = findViewById<TextView>(R.id.characterDetails_birthday)
         val status = findViewById<TextView>(R.id.characterDetails_status)
 
-        val characterName = intent.getStringExtra("name")
-        val characterNickname = intent.getStringExtra("nickname")
-        val characterImage = intent.getStringExtra("image")
-        val characterBirthday = intent.getStringExtra("birthday")
-        val characterStatus = intent.getStringExtra("status")
+        val character: CharacterItem? = intent.getParcelableExtra("characterItem")
+
+        val characterName = character?.name
+        val characterNickname = character?.nickname
+        val characterImage = character?.image
+        val characterBirthday = character?.birthday
+        val characterStatus = character?.status
 
         name.text = characterName
         nickname.text = characterNickname

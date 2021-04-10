@@ -45,13 +45,7 @@ class MainActivity : AppCompatActivity(), CharactersListAdapter.OnItemClickActio
 
     override fun itemClicked(character: CharacterItem) {
         val intent = Intent(this, DetailsActivity::class.java)
-
-        intent.putExtra("name", character.name)
-        intent.putExtra("nickname", character.nickname)
-        intent.putExtra("image", character.image)
-        intent.putExtra("birthday", character.birthday)
-        intent.putExtra("status", character.status)
-
+        intent.putExtra("characterItem", character)
         startActivity(intent)
     }
 
