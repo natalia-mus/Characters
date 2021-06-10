@@ -32,7 +32,7 @@ class Repository {
                     if (response.body().isNullOrEmpty()) {
                         callback.onError()
                     } else {
-                        callback.onSuccess(response.body()!!)
+                        response.body()?.let { callback.onSuccess(it) }
                     }
                 }
             }
