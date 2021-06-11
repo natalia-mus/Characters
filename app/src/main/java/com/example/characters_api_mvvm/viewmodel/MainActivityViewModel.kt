@@ -8,13 +8,11 @@ import com.example.characters_api_mvvm.model.Repository
 
 class MainActivityViewModel : ViewModel() {
 
-    private val model = Repository()
-
     val characters = MutableLiveData<Characters>()
     val status = MutableLiveData<Boolean>()
 
     fun getAllCharacters() {
-        model.fetchAllCharactersFromAPI(object : RepositoryCallback<Characters> {
+        Repository.fetchAllCharactersFromAPI(object : RepositoryCallback<Characters> {
             override fun onError() {
                 status.value = false
             }

@@ -8,11 +8,9 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class Repository {
+object Repository {
 
-    companion object {
-        const val BASE_URL = "https://www.breakingbadapi.com/api/"
-    }
+    private const val BASE_URL = "https://www.breakingbadapi.com/api/"
 
     private val retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
