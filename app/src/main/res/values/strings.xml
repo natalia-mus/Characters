@@ -3,4 +3,5 @@
     <string name="characterDetails_birthday">birthday: </string>
     <string name="characterDetails_status">status: </string>
     <string name="characterDetails_occupation">occupation: </string>
+    <string name="error_data_can_not_be_loaded">"Error. Data can not be loaded."</string>
 </resources>

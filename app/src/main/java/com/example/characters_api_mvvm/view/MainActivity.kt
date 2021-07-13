@@ -40,7 +40,11 @@ class MainActivity : AppCompatActivity(), CharactersListAdapter.OnItemClickActio
     }
 
     private fun errorInfo() {
-        Toast.makeText(this, "Error. Data can not be loaded.", Toast.LENGTH_SHORT).show()
+        Toast.makeText(
+            this,
+            resources.getString(R.string.error_data_can_not_be_loaded),
+            Toast.LENGTH_SHORT
+        ).show()
     }
 
     override fun itemClicked(character: CharacterItem) {
