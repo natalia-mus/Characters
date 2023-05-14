@@ -9,3 +9,9 @@ Application shows a list of characters and allows to see more details about the 
 API comes from [breakingbadapi.com](https://www.breakingbadapi.com).
 
 Background image comes from [pixabay.com](https://pixabay.com).
+
+<br/><br/>
+
+## Author
+
+[Natalia Muskała](https://github.com/natalia-mus)
